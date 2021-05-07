@@ -1,5 +1,6 @@
 import mysql.connector
 
+# establish a connection to the server
 con = mysql.connector.connect(
     user="ardit700_student",
     password="ardit700_student",
@@ -7,10 +8,12 @@ con = mysql.connector.connect(
     database="ardit700_pm1database",
 )
 
+# init a cursor object to execute query
 cursor = con.cursor()
 
 word = input("Enter the word: ")
 
+# execute the sql query
 query = cursor.execute(
     "SELECT Definition FROM Dictionary WHERE Expression = '%s'" % word
 )
